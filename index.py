@@ -17,7 +17,7 @@ class YouTubeHDDownloader:
         self.save_path_var = tk.StringVar(value=os.path.expanduser("~/Downloads"))
         self.status_var = tk.StringVar()
         self.quality_var = tk.StringVar(value="1080p")
-        self.codec_var = tk.StringVar(value="best")  # Default ke codec terbaik
+        self.codec_var = tk.StringVar(value="best")  
         self.fps_var = tk.StringVar(value="best")
         
         # Setup UI
@@ -117,12 +117,12 @@ class YouTubeHDDownloader:
                 'progress_hooks': [self.progress_hook],
                 'noplaylist': True,
                 'no_warnings': False,
-                'ignoreerrors': True,  # Jangan abort saat ada error
+                'ignoreerrors': True, 
                 'quiet': False,
                 'verbose': True,
                 'ffmpeg_location': self.find_ffmpeg(),
                 'postprocessor_args': [
-                    '-crf', '22',  # Balance antara kualitas dan ukuran file
+                    '-crf', '22', 
                 ],
             }
             
